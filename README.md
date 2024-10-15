@@ -13,12 +13,17 @@ In terms of security, the application includes account deactivation and reactiva
 
 HomePage Design
 
-![image](https://github.com/user-attachments/assets/73caab4b-e5e3-4ed6-b5b7-9138fd632f75)
+![image](https://github.com/user-attachments/assets/6e00e452-2719-478d-8760-01d0492d192d)
 
 Menu Page 
 
-![image](https://github.com/user-attachments/assets/53c60820-5d68-425a-9a8b-d614eba87381)
+![image](https://github.com/user-attachments/assets/f854d957-a58f-497e-ad56-a92388bf5a1f)
+
+PayPal 
+
+![image](https://github.com/user-attachments/assets/c59c8512-b62f-426b-b43b-11c275f75736)
 
 Admin Dashboard
 
-![image](https://github.com/user-attachments/assets/9e58851f-3170-40aa-8a3d-6a3bb789571e)
+![image](https://github.com/user-attachments/assets/362d3267-94fa-4bf1-9312-239939896c13)
+
