@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+	<siteMapNode url="menu" title="Menu"  description="menu">
+		<siteMapNode url="menu?id=1" title="Box Meals"  description="Box Meals" />
+		<siteMapNode url="menu?id=2" title="Chicken"  description="Chicken" />
+		<siteMapNode url="menu?id=3" title="Burger"  description="Burger" />
+		<siteMapNode url="menu?id=4" title="Add-On Slide"  description="Add-On Slide" />
+		<siteMapNode url="menu?id=5" title="Kids Meal"  description="Kids Meal" />
+	</siteMapNode>
+</siteMap>

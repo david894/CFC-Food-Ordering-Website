@@ -1,0 +1,301 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.Master.cs" Inherits="CFCAssignment.Maintenance.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .main{
+            background-color:#EEEEEE;
+            padding-left: 5%;
+            padding-right: 5%;
+            padding-top: 100px;
+            min-width:1200px;
+            background:url(/Image/background.png) no-repeat center;
+            background-repeat:no-repeat;
+            background-size:cover;
+        }
+        .sitemap {
+            font-size:medium;
+            margin-top:0px;
+            font-weight:bold;
+            color:#FFFFFF;
+        }
+        
+        .navMenu {
+            font-family: Bahnschrift;
+            font-size: medium;
+            margin-right:40px;
+            text-decoration:none;
+            color:#000000;
+        }
+        .navMenu:hover{
+            color:#FF0000;
+            text-decoration:underline;
+            text-decoration-color:#FF0000;
+            text-decoration-thickness:5px;
+        }
+        .cart:hover{
+            color:#FF0000;
+            text-decoration:underline;
+            text-decoration-color:#FF0000;
+            text-decoration-thickness:5px;
+        }
+        .loginLogo:hover{
+            color:#FF0000;
+            text-decoration:underline;
+            text-decoration-color:#FF0000;
+            text-decoration-thickness:5px;
+        }
+        .head {
+            margin-left:140px;
+            display:flex;
+	        justify-content:space-evenly; 
+            position:fixed;
+            width:400px;
+            top:25px;
+        }
+        .logo {
+            font-family: "Microsoft New Tai Lue";
+            font-size: x-large;
+            font-weight: bold;
+            color: #FF0000;
+            margin-left:40px;
+            margin-bottom:0px;
+            margin-top:10px;
+        }
+        .logoName {
+            font-family: "Kunstler Script";
+            font-size: large;
+            font-weight: lighter;
+            width:120px;
+            margin-top:0px;
+            margin-bottom:0px;
+            color:black;
+        }
+        .foot {
+            margin-top:0px;
+            background-color: #FF0000;
+            color:#EEEEEE;
+            margin-left:5%;
+            margin-right:5%;
+            padding-top:0px;
+        }
+        .address{
+            font-size:x-small;
+            width:100px;
+            float:right;
+            margin-top:10px;
+        }
+        .copyright {
+            font-size: xx-small;
+            padding-left:10px;
+        }
+        .navBar {
+            background-color:#FFFFFF; 
+            padding-left:5%; 
+            padding-right:5%;
+            width:100%;
+            left:0px;
+            top:0px;
+            margin-top:0px;
+            position:fixed;
+            z-index:10;
+        }
+        .login{
+            position: fixed;
+            top: 20px;
+            left: 75%;
+            width: auto;
+        }
+        .loginlink {
+            text-decoration:none;
+            color:black;
+        }
+        .loginlink:hover {
+            color:#FF0000;
+            text-decoration:underline;
+            text-decoration-color:#FF0000;
+            text-decoration-thickness:5px;
+        }
+        .cart {
+            position:fixed;
+            top:25px;
+            margin-left:100px;
+            text-decoration:none;
+            color:#000000;
+        }
+        .loginLogo:hover{
+            color:#FF0000;
+        }
+        .footerDis {
+            margin-top:0px;
+            width:250px;
+        }
+        .ManagePD{
+            background-color:#FFFEFE;
+            margin-left:5%;
+            margin-right:5%;
+            padding:2%;
+            height:fit-content;
+            min-height:600px;
+            padding-bottom:5%;
+            margin-bottom:0px;
+        }
+        .PDmenu {
+            position:absolute;
+            width:200px;
+            box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+            height:400px;
+            padding-top:30px;
+            text-align:center;
+        }
+        .PDbutton {
+            padding:5%;
+            margin-bottom:5%;
+            text-decoration:none;
+            color:black;
+        }
+        .PDLayout {
+             margin-left:250px;
+        }
+        .PDbutton:hover {
+            text-decoration:underline;
+            text-decoration-color:black;
+            text-decoration-thickness:5px;
+            font-weight:bold;
+        }
+        .loginName {
+            margin-right:40px;
+        }
+        .button {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            padding:1%;
+            border-radius:15%;
+            text-decoration:none;
+            color:#000000;
+            margin-bottom:3%;
+        }
+        .button:hover {
+            font-size:large;
+            font-weight:bold;
+            text-decoration:underline;
+            text-decoration-color:#FF0000;
+            text-decoration-thickness:5px;
+        }
+        .mainMenuItem {
+            font-family: Bahnschrift;
+            font-size: medium;
+            margin-right:5px;
+            text-decoration:none;
+            color:#000000;
+            margin-bottom:15px;
+
+        }
+        .subMenuItem {
+            font-family: Bahnschrift;
+            font-size: medium;
+            margin-right:20px;
+            text-decoration:none;
+            color:#000000;
+            padding-top:15px;
+            padding-left:10px;
+            padding-right:10px;
+            padding-bottom:5px;
+            width:120px;
+            background-color: #FFFEFE;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 5%; 
+        }
+        .mainMenuItem:hover, .subMenuItem:hover {
+           color:#FF0000;
+           text-decoration:underline;
+           text-decoration-color:#FF0000;
+           text-decoration-thickness:3px;
+           font-size:large;
+        }
+          .logout-button {
+              width:120px;
+              padding: 10px;
+              border-radius:10%;
+              background-color: red;
+              color: white;
+              border: none;
+              border-radius: 50px;
+              cursor: pointer;
+              text-align: center;
+              font-size: 16px;
+              margin-top: 20px;
+          }
+          .logout-button:hover {
+              background-color: darkred;
+          }
+    </style>
+</head>
+<body style="padding:0px; margin:0px;">
+    <form id="form1" runat="server">
+        <div class="navBar">
+            <div style="width: 91px;">
+                <h2 class="logo">CFC</h2>
+                <p class="logoName">Cripsy Fried Chicken</p>
+            </div>
+            <div class="head">
+                <asp:HyperLink ID="linkHome" runat="server" CssClass="navMenu" NavigateUrl="~/home.aspx">Home</asp:HyperLink>
+                <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1" CssClass="mainMenuItem" Orientation="Horizontal" StaticDisplayLevels="1">
+                    <StaticMenuItemStyle CssClass="mainMenuItem" />
+                    <DynamicMenuItemStyle CssClass="subMenuItem" />
+                    <StaticSelectedStyle CssClass="selectedMenuItem" />
+                    <StaticHoverStyle CssClass="hoverMenuItem" />
+                </asp:Menu>                
+                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />                
+                <asp:HyperLink ID="cartCount" runat="server" CssClass="navMenu" NavigateUrl="~/ShoppingCart.aspx">&nbsp;</asp:HyperLink>
+            </div>
+            <div class="login">
+                <asp:Image ID="Image1" runat="server" ImageUrl="~/Image/loginLogo.png" />
+                <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/MyAccount/MyAccount.aspx" CssClass="loginlink">
+                    <asp:LoginName ID="LoginName1" runat="server" CssClass="loginName"/>
+                </asp:HyperLink>
+                <asp:LoginStatus ID="LoginStatus1" runat="server" CssClass="loginlink" />
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="ManagePD">
+                <h1>Admin Page</h1><hr />
+                <div class="PDmenu">
+                    <asp:HyperLink ID="HyperLink6" runat="server" CssClass="PDbutton" NavigateUrl="~/Maintenance/Dashboard.aspx">Dashboard</asp:HyperLink><br /><br />
+                    <asp:HyperLink ID="HyperLink1" runat="server" CssClass="PDbutton" NavigateUrl="~/Maintenance/AdminProfile.aspx">My Profile</asp:HyperLink><br /><br />
+                    <asp:HyperLink ID="HyperLink5" runat="server" CssClass="PDbutton" NavigateUrl="~/MyAccount/ChangePassword.aspx">Change Password</asp:HyperLink><br /><br />
+                    <asp:HyperLink ID="HyperLink2" runat="server" CssClass="PDbutton" NavigateUrl="~/Maintenance/AdminAssign.aspx">Assign User Role</asp:HyperLink><br /><br />
+                    <asp:HyperLink ID="HyperLink3" runat="server" CssClass="PDbutton" NavigateUrl="~/Maintenance/AdminProduct.aspx">Manage Product</asp:HyperLink><br /><br />
+                    <asp:HyperLink ID="HyperLink7" runat="server" CssClass="PDbutton" NavigateUrl="~/Maintenance/AdminOrder.aspx">Manage Order</asp:HyperLink><br /><br />
+                    <asp:HyperLink ID="HyperLink8" runat="server" CssClass="PDbutton" NavigateUrl="~/Maintenance/AdminActivate.aspx">Manual Activation</asp:HyperLink><br /><br />
+                    <asp:HyperLink ID="HyperLink9" runat="server" CssClass="PDbutton" NavigateUrl="~/MyAccount/SetSecurityInfo.aspx">Set Security Question</asp:HyperLink><br /><br />
+
+
+                    <asp:Button ID="Button1" runat="server" NavigateUrl="~/home.aspx" CssClass="logout-button" Text="Logout" OnClick="Logout_Click" />
+                </div>
+                <div class="PDLayout">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" ></asp:ContentPlaceHolder>
+
+                </div>
+            </div>
+            <div class="foot">
+                <div class="footerDis">
+                    <p class="address">88,JALAN 88, MENARA 88,53300 KUALA LUMPUR</p>
+                    <div style="width: 91px; padding-left:10px;">
+                        <h2 class="logo" style="color:#EEEEEE;">CFC</h2>
+                        <p class="logoName"style="color:#EEEEEE;">Cripsy Fried Chicken</p>
+                    </div>
+                </div>
+                <hr style="margin-bottom:0px;"/>
+                <span class="copyright">COPYRIGHT &copy; 2024 CRIPSY FRIED CHICKEN</span>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+

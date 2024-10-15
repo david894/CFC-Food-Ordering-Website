@@ -1,0 +1,222 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="CFCUI.Master.cs" Inherits="CFCAssignment.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .main{
+            background-color:#EEEEEE;
+            padding-left: 5%;
+            padding-right: 5%;
+            padding-top: 100px;
+            min-width:1400px;
+            background:url(/Image/background.png) no-repeat center;
+            background-repeat:no-repeat;
+            background-size:cover;
+        }
+        .sitemap {
+            font-size:medium;
+            margin-top:0px;
+            font-weight:bold;
+            color:#FFFFFF;
+        }
+        
+        .navMenu {
+            font-family: Bahnschrift;
+            font-size: medium;
+            margin-right:40px;
+            text-decoration:none;
+            color:#000000;
+        }
+        .navMenu:hover{
+            color:#FF0000;
+            text-decoration:underline;
+            text-decoration-color:#FF0000;
+            text-decoration-thickness:5px;
+        }
+        .cart:hover{
+            color:#FF0000;
+            text-decoration:underline;
+            text-decoration-color:#FF0000;
+            text-decoration-thickness:5px;
+        }
+        .loginLogo:hover{
+            color:#FF0000;
+            text-decoration:underline;
+            text-decoration-color:#FF0000;
+            text-decoration-thickness:5px;
+        }
+        .head {
+            margin-left:140px;
+            display:flex;
+	        justify-content:space-evenly; 
+            position:fixed;
+            width:400px;
+            top:25px;
+        }
+        .logo {
+            font-family: "Microsoft New Tai Lue";
+            font-size: x-large;
+            font-weight: bold;
+            color: #FF0000;
+            margin-left:40px;
+            margin-bottom:0px;
+            margin-top:10px;
+        }
+        .logoName {
+            font-family: "Kunstler Script";
+            font-size: large;
+            font-weight: lighter;
+            width:120px;
+            margin-top:0px;
+            margin-bottom:0px;
+            color:black;
+        }
+        .foot {
+            margin-top:0px;
+            background-color: #FF0000;
+            color:#EEEEEE;
+            margin-left:5%;
+            margin-right:5%;
+        }
+        .address{
+            font-size:x-small;
+            width:100px;
+            float:right;
+            margin-top:10px;
+        }
+        .copyright {
+            font-size: xx-small;
+            padding-left:10px;
+        }
+        .navBar {
+            background-color:#FFFFFF; 
+            padding-left:5%; 
+            padding-right:5%;
+            width:100%;
+            left:0px;
+            top:0px;
+            margin-top:0px;
+            position:fixed;
+            z-index:3;
+
+        }
+        .login {
+            position: fixed;
+            top: 20px;
+            left: 75%;
+            width: auto;
+        }
+        .loginlink {
+            text-decoration:none;
+            color:black;
+        }
+        .loginlink:hover {
+            color:#FF0000;
+            text-decoration:underline;
+            text-decoration-color:#FF0000;
+            text-decoration-thickness:5px;
+        }
+        .cart {
+            display: inline-block;
+            text-decoration: none;
+            color: #000000;
+            padding: 20px 10px; 
+            background: url(./Image/cartIcon.png) no-repeat left center;
+            background-size: contain;
+            margin-left: 10px; 
+        }
+
+        .loginLogo:hover, .cart:hover {
+            color: #FF0000;
+        }
+        .loginName {
+            margin-right:40px;
+        }
+        .footerDis {
+            width:250px;
+        }
+        .mainMenuItem {
+            font-family: Bahnschrift;
+            font-size: medium;
+            margin-right:5px;
+            text-decoration:none;
+            color:#000000;
+            margin-bottom:15px;
+
+        }
+        .subMenuItem {
+            font-family: Bahnschrift;
+            font-size: medium;
+            margin-right:20px;
+            text-decoration:none;
+            color:#000000;
+            padding-top:15px;
+            padding-left:10px;
+            padding-right:10px;
+            padding-bottom:5px;
+            width:120px;
+            background-color: #FFFEFE;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 5%; 
+        }
+        .mainMenuItem:hover, .subMenuItem:hover {
+           color:#FF0000;
+           text-decoration:underline;
+           text-decoration-color:#FF0000;
+           text-decoration-thickness:3px;
+           font-size:large;
+        }
+    </style>
+    <link rel="icon" href="favicon.ico">
+</head>
+<body style="padding:0px; margin:0px;">
+    <form id="form1" runat="server">
+        <div class="navBar">
+            <div style="width: 91px;">
+                <h2 class="logo">CFC</h2>
+                <p class="logoName">Cripsy Fried Chicken</p>
+            </div>
+            <div class="head">
+                <asp:HyperLink ID="linkHome" runat="server" CssClass="navMenu" NavigateUrl="~/home.aspx">Home</asp:HyperLink>
+                <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1" CssClass="mainMenuItem" Orientation="Horizontal" StaticDisplayLevels="1">
+                    <StaticMenuItemStyle CssClass="mainMenuItem" />
+                    <DynamicMenuItemStyle CssClass="subMenuItem" />
+                    <StaticSelectedStyle CssClass="selectedMenuItem" />
+                    <StaticHoverStyle CssClass="hoverMenuItem" />
+                </asp:Menu>                
+                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />                
+                <asp:HyperLink ID="cartCount" runat="server" CssClass="navMenu" NavigateUrl="~/ShoppingCart.aspx">&nbsp;</asp:HyperLink>
+            </div>
+            <div class="login">
+                <asp:Image ID="Image1" runat="server" ImageUrl="~/Image/loginLogo.png" />
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/MyAccount/MyAccount.aspx" CssClass="loginlink">
+                    <asp:LoginName ID="LoginName1" runat="server" CssClass="loginName"/>
+                </asp:HyperLink>
+                <asp:LoginStatus ID="LoginStatus1" runat="server" CssClass="loginlink" />
+            </div>
+        </div>
+
+        <div class="main">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" >
+
+                </asp:ContentPlaceHolder>
+            <div class="foot">
+                <div class="footerDis">
+                    <p class="address">88,JALAN 88, MENARA 88,53300 KUALA LUMPUR</p>
+                    <div style="width: 91px; padding-left:10px;">
+                        <h2 class="logo" style="color:#EEEEEE;">CFC</h2>
+                        <p class="logoName"style="color:#EEEEEE;">Cripsy Fried Chicken</p>
+                    </div>
+                </div>
+                <hr style="margin-bottom:0px;"/>
+                <span class="copyright">COPYRIGHT &copy; 2024 CRIPSY FRIED CHICKEN</span>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
